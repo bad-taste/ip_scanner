@@ -34,7 +34,7 @@ def threader():
 q = Queue()
 startTime = time.time()
 
-for x in range(1000):
+for x in range(100):
     t = threading.Thread(target=threader)
     t.daemon = True
     t.start()
