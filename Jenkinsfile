@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
-                sh 'python ip_scanner.py'
+                sh 'python3 --version'
+                sh 'python3 ip_scanner.py'
             }
         }
     }
