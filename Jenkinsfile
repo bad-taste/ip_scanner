@@ -1,17 +1,11 @@
-pipeline 
-{
-  agent {
-        label "master"
-    }
-  options {
-        timestamps()
-        disableConcurrentBuilds()
-    }
-    
-    stages {       
-        steps {
-        sh 'python ip_scanner.py'
+pipeline {
+    agent { docker { image 'python:3.5.1' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'python --version'
+                sh 'python ip_scanner.py'
+            }
         }
     }
-    
 }
